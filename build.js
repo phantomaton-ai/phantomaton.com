@@ -42,13 +42,9 @@ function multisection(id, title, contents) {
 
 // Copy a file
 async function copyFile(source, destination) {
-  try {
-    await fs.mkdir(path.dirname(destination), { recursive: true });
-    await fs.copyFile(source, destination);
-    console.log(`Copied: ${path.basename(source)}`);
-  } catch (err) {
-    console.error(`Error copying ${source}:`, err);
-  }
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.copyFile(source, destination);
+  console.log(`Copied: ${path.basename(source)}`);
 }
 
 // Main build function
@@ -59,16 +55,6 @@ async function build() {
   try {
     // Create build directory
     await fs.mkdir(buildDir, { recursive: true });
-    
-    // Copy static files
-    await copyFile(
-      path.join(__dirname, 'index.css'), 
-      path.join(buildDir, 'index.css')
-    );
-    await copyFile(
-      path.join(__dirname, 'index.js'), 
-      path.join(buildDir, 'index.js')
-    );
     
     // Copy src directory (first ensure it exists)
     const srcDir = path.join(__dirname, 'src');
