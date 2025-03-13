@@ -19,6 +19,7 @@ html, body, main {
 
 body {
   position: relative;
+  line-height: 1.6;
 }
 
 /* Links styling */
@@ -112,6 +113,7 @@ main header h1 {
   font-family: 'Workbench', sans-serif;
   font-size: calc(min(6rem, 10vw));
   font-style: normal;
+  line-height: 1.25;
   text-shadow: 0rem 0rem 1rem black;
   position: absolute;
   top: 50%;
