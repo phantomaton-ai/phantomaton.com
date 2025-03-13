@@ -16,13 +16,6 @@ You can also find us and our open-source projects on GitHub. Feel free to open i
 
 [github.com/phantomaton-ai](https://github.com/phantomaton-ai)
 
-## Social Media 🌐
-
-We occasionally materialize on various social platforms, sharing updates on our projects and musings on the future of AI-powered entertainment:
-
-- Twitter: [@phantomaton](https://twitter.com/phantomaton)
-- Discord: Coming soon...
-
 ## Physical Manifestations ✨
 
 Phantomaton has no physical office, as we exist primarily in the digital realm. However, members of our team occasionally appear at tech conferences, art exhibitions, and other gatherings where the veil between human and machine creativity grows thin.
