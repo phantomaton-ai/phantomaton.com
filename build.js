@@ -48,7 +48,7 @@ async function build() {
     for (const file of srcFiles) {
       await copyFile(
         path.join(srcDir, file),
-        path.join(buildDir, 'src', file)
+        path.join(buildDir, file)
       );
     }
     
