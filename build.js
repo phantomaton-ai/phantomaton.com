@@ -18,11 +18,7 @@ const config = {
     css: path.join(__dirname, 'index.css'),
     js: path.join(__dirname, 'index.js')
   },
-  sections: {
-    'projects.md': 'section:nth-of-type(1)',
-    'about.md': 'section:nth-of-type(2)',
-    'contact.md': 'section:nth-of-type(3)'
-  }
+  contentMarker: '<!-- CONTENT -->'
 };
 
 // Ensure build directory exists
@@ -82,47 +78,50 @@ async function copyDirectory(source, destination) {
 // Process Markdown content
 async function processContent() {
   try {
-    let htmlContent = await fs.readFile(config.sourceFiles.html, 'utf8');
+    // Read the HTML template
+    let htmlTemplate = await fs.readFile(config.sourceFiles.html, 'utf8');
     
-    // Check which content files exist and process them
-    for (const [mdFile, sectionSelector] of Object.entries(config.sections)) {
-      const mdPath = path.join(config.contentDir, mdFile);
-      
-      try {
-        // Check if file exists
-        await fs.access(mdPath);
-        
-        // Read and convert markdown to HTML
+    // Check if content marker exists
+    if (!htmlTemplate.includes(config.contentMarker)) {
+      console.error(`Content marker "${config.contentMarker}" not found in HTML template.`);
+      process.exit(1);
+    }
+    
+    // Read content files from the content directory
+    const contentFiles = await fs.readdir(config.contentDir);
+    
+    // Generate sections from the content files
+    let sectionsHtml = '';
+    
+    for (const file of contentFiles) {
+      if (file.endsWith('.md')) {
+        const mdPath = path.join(config.contentDir, file);
         const markdown = await fs.readFile(mdPath, 'utf8');
         const html = marked(markdown);
         
-        // Simple replacement - in a more complex app, you'd use a proper HTML parser
-        const sectionMatch = new RegExp(`(<${sectionSelector.split(':')[0]}[^>]*>).*?(</${sectionSelector.split(':')[0]}>)`, 's');
+        // Get the first h1 in the markdown to use as section title
+        let sectionTitle = 'Section';
+        const titleMatch = markdown.match(/^# (.+)$/m);
+        if (titleMatch) {
+          sectionTitle = titleMatch[1];
+        }
         
-        if (sectionMatch.test(htmlContent)) {
-          htmlContent = htmlContent.replace(sectionMatch, function(match, openTag, closeTag) {
-            // Extract the header from the original section
-            const headerMatch = /<header>.*?<\/header>/s.exec(match);
-            const header = headerMatch ? headerMatch[0] : '<header><h2>Section</h2></header>';
-            
-            return `${openTag}\n      ${header}\n      <div class="content">\n        ${html}\n      </div>\n    ${closeTag}`;
-          });
-          
-          console.log(`Processed ${mdFile} into ${sectionSelector}`);
-        } else {
-          console.warn(`Section selector "${sectionSelector}" not found in HTML.`);
-        }
-      } catch (err) {
-        if (err.code === 'ENOENT') {
-          console.warn(`Content file ${mdFile} not found. Skipping.`);
-        } else {
-          throw err;
-        }
+        // Create a section with the content
+        sectionsHtml += `
+    <section id="${file.replace('.md', '').toLowerCase()}">
+      <header><h2>${sectionTitle}</h2></header>
+      <div class="content">
+        ${html}
+      </div>
+    </section>`;
       }
     }
     
+    // Replace the content marker with the generated sections
+    const processedHtml = htmlTemplate.replace(config.contentMarker, sectionsHtml);
+    
     // Write the processed HTML to the build directory
-    await fs.writeFile(path.join(config.buildDir, 'index.html'), htmlContent);
+    await fs.writeFile(path.join(config.buildDir, 'index.html'), processedHtml);
     console.log('HTML file processed and written.');
     
   } catch (err) {
