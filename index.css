@@ -1,5 +1,6 @@
 /* index.css */
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Workbench:BLED,SCAN@0..100,-53..100&display=swap');
+@import './src/flicker.css';
 
 /* Base styles */
 html, body {
@@ -127,80 +128,4 @@ footer h1 {
   font-family: 'Workbench', sans-serif;
   font-variation-settings: "BLED" 0, "SCAN" -20;
   text-shadow: 0rem 0rem 1.25rem #80A;
-}
-
-.counter-0 header h1 {
-  font-weight: 100;
-  text-shadow: 0rem 0rem 1rem #0F0;
-  font-variation-settings: "BLED" 0, "SCAN" -50;
-}
-.counter-1 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 1.25rem #0F0;
-  font-variation-settings: "BLED" 10, "SCAN" -25;
-}
-.counter-2 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 1.5rem #0F0;
-  font-variation-settings: "BLED" 20, "SCAN" 0;
-}
-.counter-3 header h1 {
-  font-weight: 100;
-  text-shadow: 0rem 0rem 2rem #0F0;
-  font-variation-settings: "BLED" 40, "SCAN" 25;
-}
-.counter-4 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 1.75rem #0F0;
-  font-variation-settings: "BLED" 60, "SCAN" 30;
-}
-.counter-5 header h1 {
-  font-weight: 100;
-  text-shadow: 0rem 0rem 2rem #0F0;
-  font-variation-settings: "BLED" 80, "SCAN" 50;
-}
-.counter-6 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 1.25rem #0F0;
-  font-variation-settings: "BLED" 100, "SCAN" 25;
-}
-.counter-8 header h1 {
-  font-weight: 100;
-  text-shadow: 0rem 0rem 1rem #0F0;
-  font-variation-settings: "BLED" 70, "SCAN" 0;
-}
-.counter-9 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 0.75rem #0F0;
-  font-variation-settings: "BLED" 50, "SCAN" -25;
-}
-.counter-10 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 0.5rem #0F0;
-  font-variation-settings: "BLED" 30, "SCAN" -40;
-}
-.counter-11 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 0.25rem #0F0;
-  font-variation-settings: "BLED" 10, "SCAN" -50;
-}
-.counter-12 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 0.125rem #0F0;
-  font-variation-settings: "BLED" 0, "SCAN" 0;
-}
-.counter-13 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 0.25rem #0F0;
-  font-variation-settings: "BLED" 30, "SCAN" 25;
-}
-.counter-14 header h1 {
-  font-weight: 4000;
-  text-shadow: 0rem 0rem 0.5rem #0F0;
-  font-variation-settings: "BLED" 50, "SCAN" 50;
-}
-.counter-15 header h1 {
-  font-weight: 100;
-  text-shadow: 0rem 0rem 0.75rem #0F0;
-  font-variation-settings: "BLED" 20, "SCAN" 10;
 }
