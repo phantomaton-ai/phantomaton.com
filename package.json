@@ -4,6 +4,7 @@
   "main": "phantomaton.com.js",
   "scripts": {
     "all": "lovecraft -a",
+    "build": "node build.js",
     "cov": "lovecraft -c",
     "lint": "lovecraft -l",
     "pub": "lovecraft -a -p",
