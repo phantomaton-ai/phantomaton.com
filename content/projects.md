@@ -13,11 +13,13 @@ Phantomaton is a lightweight framework for building AI-powered microsites and ap
 
 With Phantomaton, you can quickly build AI-powered applications that respond intelligently to user input, process and generate content, and create engaging interactive experiences.
 
+[GitHub Repository](https://github.com/phantomaton-ai/phantomaton)
+
 ---
 
 ## Necronomicon 📖
 
-Necronomicon provides collections of executable commands that can be seamlessly embedded and executed within text-based documents. This library enables powerful chatbots and text processing applications.
+Necronomicon provides collections of executable commands that can be seamlessly embedded and executed within text-based documents. This powerful library enables building more robust chatbots and text processing applications.
 
 ### Features ⚡️
 
@@ -28,18 +30,38 @@ Necronomicon provides collections of executable commands that can be seamlessly 
 
 Necronomicon allows you to define a structured way to execute commands from within text, making it perfect for AI assistants that need to perform actions while maintaining conversation.
 
+[GitHub Repository](https://github.com/phantomaton-ai/necronomicon)
+
 ---
 
-## Future Projects 🔭
+## Smarkup 🪄
 
-### Hierophant 🧙‍♂️
-*Coming soon* - A knowledge management system for AI agents.
+Smarkup is a lightweight syntax for embedding directives in plain-text document formats. It's primarily designed for providing custom behaviors to LLM assistants but can be used for general parsing and rendering of documents with directives.
 
-### Lovecraft 👁️
-*Coming soon* - Text generation utilities with a cosmic horror twist.
+### Features 📝
 
-### Smarkup 📝
-*Coming soon* - A lightweight markup language for AI-oriented documents.
+- **Simple directive syntax** with intuitive format
+- **Flexible parsing** with customizable symbols
+- **Support for attributes** and body content
+- **Clean rendering** back to formatted text
 
-### Bumpkin 🌾
-*Coming soon* - Simple AI conversational agent for educational purposes.
+Smarkup makes it easy to embed functionality within your text documents, creating a seamless way for AI systems to understand commands and execute actions based on user input.
+
+[GitHub Repository](https://github.com/phantomaton-ai/smarkup)
+
+---
+
+## Lovecraft 🐙
+
+The Lovecraft test framework provides a dark and eldritch approach to testing JavaScript applications. Powered by popular testing libraries, it streamlines the process of writing and running tests.
+
+### Features 🧪
+
+- **Simplified test utilities** from Mocha, Chai, and Sinon
+- **Coverage reporting** using c8
+- **Linting capabilities** with ESLint integration
+- **Convenient CLI** for running tests and publishing packages
+
+Lovecraft helps ensure your code is robust and reliable, with a touch of cosmic horror to make testing more enjoyable.
+
+[GitHub Repository](https://github.com/phantomaton-ai/lovecraft)
