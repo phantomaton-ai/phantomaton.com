@@ -19,8 +19,6 @@ html, body, main {
 
 body {
   position: relative;
-  font-family: sans-serif;
-  line-height: 1.6;
 }
 
 /* Links styling */
@@ -129,27 +127,18 @@ main header h1 {
   transition: left 0.5s, font-size 0.5s, transform 0.5s, color 0.5s;
 }
 
-/* Differentiate h1 and h2 */
-h1 {
-  font-family: 'Tomorrow', sans-serif;
-  letter-spacing: 0.05em;
-}
-
-h2 {
-  font-family: 'Tomorrow', sans-serif;
-  font-size: 1.5rem;
-  color: #EFE;
-  letter-spacing: 0.1em;
-}
-
 /* Headers within content */
 main section .content h1 {
+  font-family: 'Tomorrow', sans-serif;
+  letter-spacing: 0.05em;
   font-size: 2rem;
   color: #0F0;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
 }
 
 main section .content h2 {
+  font-family: 'Tomorrow', sans-serif;
+  letter-spacing: 0.1em;
   font-size: 1.4rem;
   color: #0FF;
   margin-top: 2rem;
