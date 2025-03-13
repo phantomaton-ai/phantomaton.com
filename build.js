@@ -9,14 +9,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Simple function to read and render markdown file
-async function render(filePath) {
-  try {
-    const markdown = await fs.readFile(filePath, 'utf8');
-    return marked(markdown);
-  } catch (err) {
-    console.warn(`Warning: Could not read ${filePath}`);
-    return '<p>Content coming soon...</p>';
-  }
+async function render(contentPath) {
+  const filePath = path.join(__dirname, contentPath);
+  const markdown = await fs.readFile(filePath, 'utf8');
+  return marked(markdown);
 }
 
 // Combine multiple content pieces under a section
@@ -31,36 +27,17 @@ function section(id, title, content) {
 }
 
 // Explicitly combine project files
-async function buildProjects() {
-  const projectsContent = `
+function multisection(id, title, contents) {
+  const content = `
     <div class="project-grid">
+      ${contents.map(content => `
       <div class="project-card">
-        ${await render(path.join(__dirname, 'content/projects/phantomaton.md'))}
-      </div>
-      <div class="project-card">
-        ${await render(path.join(__dirname, 'content/projects/necronomicon.md'))}
-      </div>
-      <div class="project-card">
-        ${await render(path.join(__dirname, 'content/projects/smarkup.md'))}
-      </div>
-      <div class="project-card">
-        ${await render(path.join(__dirname, 'content/projects/lovecraft.md'))}
-      </div>
+        ${content}
+      </div>      
+      `)}
     </div>
   `;
-  
-  return section('projects', 'Projects 🚀', projectsContent);
-}
-
-// Build each additional section
-async function buildAbout() {
-  return section('about', 'About 🔮', 
-    await render(path.join(__dirname, 'content/about.md')));
-}
-
-async function buildContact() {
-  return section('contact', 'Contact 📝', 
-    await render(path.join(__dirname, 'content/contact.md')));
+  return section(id, title, content);
 }
 
 // Copy a file
@@ -107,10 +84,13 @@ async function build() {
     let html = await fs.readFile(path.join(__dirname, 'index.html'), 'utf8');
     
     // Build all sections
+    const projects = ['phantomaton', 'necronomicon', 'smarkup', 'lovecraft'];
     const content = [
-      await buildProjects(),
-      await buildAbout(),
-      await buildContact()
+      multisection('projects', 'Projects 🚀', await Promise.all(
+        projects.map(project => render(`content/projects/${project}.md`))
+      )),
+      section('about', 'About 🔮', await render('content/about.md')),
+      section('contact', 'Contact 📝', await render('content/contact.md'))
     ].join('\n');
     
     // Replace content marker
