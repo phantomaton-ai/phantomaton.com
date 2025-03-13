@@ -99,17 +99,9 @@ async function processContent() {
         const markdown = await fs.readFile(mdPath, 'utf8');
         const html = marked(markdown);
         
-        // Get the first h1 in the markdown to use as section title
-        let sectionTitle = 'Section';
-        const titleMatch = markdown.match(/^# (.+)$/m);
-        if (titleMatch) {
-          sectionTitle = titleMatch[1];
-        }
-        
         // Create a section with the content
         sectionsHtml += `
     <section id="${file.replace('.md', '').toLowerCase()}">
-      <header><h2>${sectionTitle}</h2></header>
       <div class="content">
         ${html}
       </div>
