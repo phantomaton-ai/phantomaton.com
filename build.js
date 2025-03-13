@@ -26,20 +26,6 @@ function section(id, title, content) {
     </section>`;
 }
 
-// Explicitly combine project files
-function multisection(id, title, contents) {
-  const content = `
-    <div class="project-grid">
-      ${contents.map(content => `
-      <div class="project-card">
-        ${content}
-      </div>      
-      `)}
-    </div>
-  `;
-  return section(id, title, content);
-}
-
 // Copy a file
 async function copyFile(source, destination) {
   await fs.mkdir(path.dirname(destination), { recursive: true });
@@ -72,9 +58,7 @@ async function build() {
     // Build all sections
     const projects = ['phantomaton', 'necronomicon', 'smarkup', 'lovecraft'];
     const content = [
-      multisection('projects', 'Projects 🚀', await Promise.all(
-        projects.map(project => render(`content/projects/${project}.md`))
-      )),
+      section('projects', 'Projects 🚀', await render('content/projects.md')),
       section('about', 'About 🔮', await render('content/about.md')),
       section('contact', 'Contact 📝', await render('content/contact.md'))
     ].join('\n');
