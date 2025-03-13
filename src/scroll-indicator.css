@@ -1,0 +1,47 @@
+/* scroll-indicator.css - Styles for the scroll down indicator */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #0F0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.scroll-indicator.visible {
+  opacity: 1;
+}
+
+.scroll-indicator .arrow {
+  font-size: 2rem;
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator .text {
+  font-family: 'Major Mono Display', sans-serif;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Hide when scrolled */
+.scrolled .scroll-indicator {
+  opacity: 0;
+}
