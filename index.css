@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  background: none;
+  background: #666;
   overflow: scroll;
   position: absolute;
 }
