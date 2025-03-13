@@ -8,13 +8,20 @@
   color: #0F0;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   pointer-events: none;
   z-index: 100;
 }
 
-.scroll-indicator.visible {
-  opacity: 1;
+/* Fade-in animation with 3s delay when unscrolled */
+.unscrolled .scroll-indicator {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+/* Faster fade-out when scrolled */
+.scrolled .scroll-indicator {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out; /* Twice as fast */
 }
 
 .scroll-indicator .arrow {
@@ -41,7 +48,11 @@
   }
 }
 
-/* Hide when scrolled */
-.scrolled .scroll-indicator {
-  opacity: 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
