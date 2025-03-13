@@ -3,12 +3,12 @@
 .counter-0 header h1 {
   font-weight: 400;
   text-shadow: 0rem 0rem 0.5rem #0F0;
-  font-variation-settings: "BLED" 15, "SCAN" -10;
+  font-variation-settings: "BLED" 10, "SCAN" -15;
 }
 .counter-1 header h1 {
   font-weight: 400;
   text-shadow: 0rem 0rem 0.55rem #0F0;
-  font-variation-settings: "BLED" 15, "SCAN" -10;
+  font-variation-settings: "BLED" 12, "SCAN" -12;
 }
 .counter-2 header h1 {
   font-weight: 400;
@@ -27,13 +27,18 @@
 }
 .counter-5 header h1 {
   font-weight: 400;
-  text-shadow: 0rem 0rem 0.75rem #0F0;
-  font-variation-settings: "BLED" 17, "SCAN" -6;
+  text-shadow: 0rem 0rem 0.45rem #0F0;
+  font-variation-settings: "BLED" 8, "SCAN" -18;
 }
 .counter-6 header h1 {
   font-weight: 400;
   text-shadow: 0rem 0rem 0.8rem #0F0;
   font-variation-settings: "BLED" 18, "SCAN" -5;
+}
+.counter-7 header h1 {
+  font-weight: 400;
+  text-shadow: 0rem 0rem 0.4rem #0F0;
+  font-variation-settings: "BLED" 7, "SCAN" -20;
 }
 .counter-8 header h1 {
   font-weight: 400;
@@ -47,8 +52,8 @@
 }
 .counter-10 header h1 {
   font-weight: 400;
-  text-shadow: 0rem 0rem 0.65rem #0F0;
-  font-variation-settings: "BLED" 17, "SCAN" -6;
+  text-shadow: 0rem 0rem 0.35rem #0F0;
+  font-variation-settings: "BLED" 6, "SCAN" -22;
 }
 .counter-11 header h1 {
   font-weight: 400;
@@ -62,8 +67,8 @@
 }
 .counter-13 header h1 {
   font-weight: 400;
-  text-shadow: 0rem 0rem 0.5rem #0F0;
-  font-variation-settings: "BLED" 15, "SCAN" -9;
+  text-shadow: 0rem 0rem 0.3rem #0F0;
+  font-variation-settings: "BLED" 5, "SCAN" -25;
 }
 .counter-14 header h1 {
   font-weight: 400;
