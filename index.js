@@ -1,12 +1,19 @@
-// index.js - Main application entry point
-import ScrollHandler from './src/scroll.js';
-import AnimationController from './src/animation.js';
+import scrollkeeper from './src/scrollkeeper.js';
+import framecounter from './src/framecounter.js';
 
-// Initialize components
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize scroll handler
-  const scrollHandler = new ScrollHandler();
-  
-  // Initialize animation controller
-  const animationController = new AnimationController();
+  scrollkeeper({
+    element: document.querySelector('main'),
+    target: document.body,
+    scrolled: 'scrolled',
+    unscrolled: 'unscrolled'
+  });
+
+  framecounter({
+    prefix: 'counter-',
+    randomized: true,
+    rate: 24,
+    states: 16,
+    target: document.body
+  });
 });
