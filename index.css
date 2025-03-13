@@ -1,21 +1,27 @@
 /* index.css */
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Workbench:BLED,SCAN@0..100,-53..100&display=swap');
 
-/* Chatbot UI styles */
+/* Base styles */
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #000;
+  color: #EFE;
 }
 
-html, body, main, body::before {
+html, body, main {
   height: 100%;
-  position: absolute;
   width: 100%;
+}
+
+body {
+  position: relative;
 }
 
 main {
   background: none;
   overflow: scroll;
+  position: absolute;
 }
 
 main > header {
@@ -190,63 +196,11 @@ footer h1 {
 }
 .counter-14 header h1 {
   font-weight: 4000;
-  text-shadow: 0rem 0rem 0.5rem #0F0
+  text-shadow: 0rem 0rem 0.5rem #0F0;
   font-variation-settings: "BLED" 50, "SCAN" 50;
 }
 .counter-15 header h1 {
   font-weight: 100;
   text-shadow: 0rem 0rem 0.75rem #0F0;
   font-variation-settings: "BLED" 20, "SCAN" 10;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('images/90fc61ca-e7b7-4458-ac70-68c4d17128ce.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
-  animation: carousel 1440s linear infinite;
-  z-index: -1;
-}
-
-@keyframes carousel {
-  0% {
-    background-image: url('images/90fc61ca-e7b7-4458-ac70-68c4d17128ce.png');
-  }
-  10% {
-    background-image: url('images/02040601-8c5f-438c-8b35-6caf487a7661.png');
-  }
-  20% {
-    background-image: url('images/ee831484-8d19-4d29-bff5-8ff6f636c04e.png');
-  }
-  30% {
-    background-image: url('images/dd840c0e-b74f-4d25-b753-8b6538f0277a.png');
-  }
-  40% {
-    background-image: url('images/e2aad2be-f183-4bd5-af41-c043e3a4f572.png');
-  }
-  50% {
-    background-image: url('images/354fde13-2095-40e6-a9f4-84f55920937f.png');
-  }
-  60% {
-    background-image: url('images/5036d11a-c112-4a66-b4a6-645b55c7788f.png');
-  }
-  70% {
-    background-image: url('images/3ed63926-dcbb-4f94-ad91-9d1342520649.png');
-  }
-  80% {
-    background-image: url('images/2eb18b1e-e000-4b8f-9e33-f581a6b6f046.png');
-  }
-  90% {
-    background-image: url('images/f2edd7b6-24e7-4633-b5f2-fc67ee2655c7.png');
-  }
-  100% {
-    background-image: url('images/90fc61ca-e7b7-4458-ac70-68c4d17128ce.png');
-  }
 }
