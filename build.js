@@ -53,7 +53,7 @@ async function build() {
     }
     
     // Read HTML template
-    let html = await fs.readFile(path.join(__dirname, 'index.html'), 'utf8');
+    let html = await fs.readFile(path.join(__dirname, 'templates/index.html'), 'utf8');
     
     // Build all sections
     const projects = ['phantomaton', 'necronomicon', 'smarkup', 'lovecraft'];

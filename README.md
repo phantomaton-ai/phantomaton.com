@@ -51,10 +51,11 @@ phantomaton.com/
 ├── src/                # Source files for styles and scripts
 │   ├── flicker.css     # Header animation effects
 │   ├── framecounter.js # Animation state management
+│   ├── index.css       # Main CSS file
+│   ├── index.js        # Main JavaScript file
 │   └── scrollkeeper.js # Scroll position tracking
-├── index.html          # Main HTML template
-├── index.css           # Main CSS file (imports from src/)
-├── index.js            # Main JavaScript file (imports from src/)
+├── templates/          # HTML templates
+│   └── index.html      # Main HTML template
 └── build.js            # Build script to generate the site
 ```
 
