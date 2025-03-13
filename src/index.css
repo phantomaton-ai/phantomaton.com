@@ -1,7 +1,7 @@
 /* index.css */
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Workbench:BLED,SCAN@0..100,-53..100&display=swap');
-@import './src/flicker.css';
-@import './src/scroll-indicator.css';
+@import './flicker.css';
+@import './scroll-indicator.css';
 
 /* Base styles */
 html, body {

@@ -1,5 +1,5 @@
-import scrollkeeper from './src/scrollkeeper.js';
-import framecounter from './src/framecounter.js';
+import scrollkeeper from './scrollkeeper.js';
+import framecounter from './framecounter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   scrollkeeper({
