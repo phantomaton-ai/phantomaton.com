@@ -18,6 +18,31 @@ html, body, main {
 
 body {
   position: relative;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* Links styling */
+a {
+  color: #5F5;
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+  color: #AFA;
+  text-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
+}
+
+a:visited {
+  color: #F5F;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+a:visited:hover {
+  color: #FAF;
+  text-shadow: 0 0 12px rgba(255, 0, 255, 0.7);
 }
 
 main {
@@ -42,15 +67,31 @@ main .placeholder {
   height: 50vh;
 }
 
+/* Section styling */
 main section {
   background: rgba(0,0,0,0.5);
   border: 1px black solid;
   border-radius: 1rem;
-  color: #EFE;
-  font-family: sans-serif;
+  color: #CCC; /* Lighter gray for content text */
   margin: 1rem;
   min-height: 50vh;
   padding: 1rem;
+  position: relative;
+}
+
+/* Section headers and content separation */
+main section .content {
+  padding: 3.5rem 1rem 1rem; /* Add padding at top for the headers */
+}
+
+section:nth-of-type(3) .content,
+section:nth-of-type(4) .content {
+  padding: 1rem 1rem 3.5rem; /* Add padding at bottom for the headers */
+}
+
+/* Strong elements in sections should be brighter */
+main section strong {
+  color: #EFE;
 }
 
 .unscrolled main > header {
@@ -66,6 +107,7 @@ main section {
   z-index: 1000;
 }
 
+/* Main h1 styling */
 main header h1 {
   color: #0F0;
   font-family: 'Workbench', sans-serif;
@@ -86,9 +128,39 @@ main header h1 {
   transition: left 0.5s, font-size 0.5s, transform 0.5s, color 0.5s;
 }
 
+/* Differentiate h1 and h2 */
+h1 {
+  font-family: 'Workbench', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-family: 'Major Mono Display', sans-serif;
+  font-size: 1.5rem;
+  color: #EFE;
+  letter-spacing: 0.1em;
+}
+
+/* Headers within content */
+main section .content h1 {
+  font-size: 2rem;
+  color: #0F0;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+main section .content h2 {
+  font-size: 1.4rem;
+  color: #0FF;
+  margin-top: 2rem;
+}
+
+/* Section position headers */
 section header h2 {
   font-family: 'Major Mono Display', sans-serif;
   padding: 1rem 2rem;
+  margin: 0;
+  color: #FFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 section {
@@ -97,6 +169,7 @@ section {
 
 section header {
   position: absolute;
+  z-index: 10;
 }
 
 section:nth-of-type(4n+1) header {
@@ -116,11 +189,13 @@ section:nth-of-type(4n+4) header {
   bottom: 0;
 }
 
+/* Footer styling */
 footer {
   background: #000;
-  color: #FFF;
-  height: 9rem;
-  padding: 0.5rem;
+  color: #AAA;
+  height: auto;
+  min-height: 9rem;
+  padding: 2rem 0.5rem;
   text-align: center;
 }
 
@@ -129,4 +204,48 @@ footer h1 {
   font-family: 'Workbench', sans-serif;
   font-variation-settings: "BLED" 0, "SCAN" -20;
   text-shadow: 0rem 0rem 1.25rem #80A;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  font-family: 'Major Mono Display', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #888;
+  opacity: 0.8;
+}
+
+/* List styling */
+main section ul, main section ol {
+  padding-left: 1.5rem;
+}
+
+main section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Project cards styling for future horizontal scroll */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.project-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.project-card h2 {
+  color: #0F0;
+  margin-top: 0;
 }
