@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   framecounter({
     prefix: 'counter-',
     randomized: true,
-    rate: 24,
+    rate: 12,
     states: 16,
     target: document.body
   });
