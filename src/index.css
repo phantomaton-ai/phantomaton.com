@@ -59,6 +59,9 @@ main > header {
 }
 
 main .placeholder {
+  background-image: url("phantomaton.png");
+  background-position: center;
+  background-size: cover;
   height: 100vh;
   transition: height 0.5s;
 }
