@@ -2,6 +2,8 @@
 
 This repository contains the source code for the [Phantomaton Studios](https://phantomaton.com) website - the spectral home of our AI-powered entertainment studio.
 
+https://github.com/user-attachments/assets/4f5cf25f-64a5-4395-a321-1bbc6131c4d0
+
 ## Overview 👁️
 
 Phantomaton.com is a minimalist, content-focused website showcasing our projects, mission, and contact information. The site features:
